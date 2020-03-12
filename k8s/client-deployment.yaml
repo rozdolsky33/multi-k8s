@@ -1,13 +1,13 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: client-deployment
 spec:
   replicas: 3
   selector:
-    matchLables:
-    component: web
-  templet:
+    matchLabels:
+      component: web
+  template:
     metadata:
       labels:
         component: web
