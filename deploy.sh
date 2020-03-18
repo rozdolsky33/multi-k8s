@@ -4,11 +4,11 @@ docker build -t rozdolsky33/multi-worker:latest -t rozdolsky33/multi-worker:$SHA
 
 docker push rozdolsky33/multi-client:latest
 docker push rozdolsky33/multi-server:latest
-docker push rozdolsku33/multi-worker:latest
+docker push rozdolsky33/multi-worker:latest
 
 docker push rozdolsky33/multi-client:$SHA
 docker push rozdolsky33/multi-server:$SHA
-docker push rozdolsku33/multi-worker:$SHA
+docker push rozdolsky33/multi-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=rozdolsky33/multi-server:$SHA
