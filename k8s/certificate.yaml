@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: arwestdeveloper-com-tls
+spec:
+  secretName: arwestdeveloper-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: arwestdeveloper.com
+  dnsNames:
+    - arwestdeveloper.com
+    - www.arwestdeveloper.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - arwestdeveloper.com
+          - www.arwestdeveloper.com
